@@ -1,0 +1,133 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.contenedor {
+    background: linear-gradient(to left, #2BAEB9 , #FF0692);
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carta {
+    width: 20%;
+    height: 90%;
+    background: #1A191E;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cabeza {
+    width: 100%;
+    height: 50%;
+    background: -webkit-radial-gradient(center, circle, #401F13 0%, transparent, transparent);
+    z-index: 1;
+    rotate: 6deg;
+    cursor: none;
+}
+
+.cabeza:hover {
+    animation: girar 5s linear infinite;
+}
+
+.cabeza .petalosb {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cabeza .petalosf {
+    position: relative;
+    top: -100%;
+    left: 10%;
+    width: 80%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    rotate: 13deg;
+}
+
+.cabeza .petalosb>div {
+    position: absolute;
+    margin: 10%;
+    width: 100%;
+    height: 18%;
+    background: -webkit-radial-gradient(center, circle, transparent 30%, #FA8401, #FBE73C 100%);
+
+    border-top-right-radius: 100%;
+    border-top-left-radius: 25%;
+    border-bottom-left-radius: 100%;
+    border-bottom-right-radius: 25%;
+    transform: rotate(calc(30deg*var(--i)));
+}
+
+.cabeza .petalosf>div {
+    position: absolute;
+    width: 100%;
+    height: 18%;
+    background: -webkit-radial-gradient(center, circle, transparent 30%, #FA8401, #FBE73C 100%);
+
+    border-top-right-radius: 100%;
+    border-top-left-radius: 25%;
+    border-bottom-left-radius: 100%;
+    border-bottom-right-radius: 25%;
+    transform: rotate(calc(30deg*var(--i)));
+}
+
+.tallo {
+    position: relative;
+    width: 5%;
+    height: 60%;
+    top: -8%;
+    background: linear-gradient(to left, #437849 30%, #1E8C38, #23AF4A);
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tallo .mensaje:first-child {
+    position: absolute;
+    text-align: center;
+    color: white;
+    font: normal 1vw Century, sans-serif;
+
+    width: 2000%;
+    box-shadow: inset 0px 0px 100px 10px #2F2A30;
+}
+
+.tallo .mensaje:last-child {
+    position: absolute;
+    text-align: center;
+    font: bold 3vw Kunstler Script, sans-serif;
+    color: #C3217A;
+    width: 2000%;
+    top: 88%;
+    box-shadow: inset 0px 0px 100px 10px white;
+}
+
+@keyframes girar {
+    to {
+        transform: rotateZ(360deg);
+    }
+}
